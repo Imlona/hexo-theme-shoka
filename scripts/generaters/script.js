@@ -3,7 +3,7 @@ const fs = require('hexo-fs');
 const url = require('url');
 
 
-hexo.extend.generator.register('script', function(locals){
+hexo.extend.generator.register('script', function (locals) {
   const config = hexo.config;
   const theme = hexo.theme.config;
 
@@ -33,34 +33,36 @@ hexo.extend.generator.register('script', function(locals){
       fancybox: theme.vendors.css.fancybox
     },
     loader: theme.loader,
-    search : null,
+    search: null,
     valine: theme.valine,
     quicklink: {
-      timeout : theme.quicklink.timeout,
+      timeout: theme.quicklink.timeout,
       priority: theme.quicklink.priority
     }
   };
 
-  if(config.algolia) {
+  if (config.algolia) {
     siteConfig.search = {
-      appID    : config.algolia.appId,
-      apiKey   : config.algolia.apiKey,
+      appID: config.algolia.appId,
+      apiKey: config.algolia.apiKey,
       indexName: config.algolia.indexName,
-      hits     : theme.search.hits
+      hits: theme.search.hits
     }
   }
 
-  if(theme.audio) {
+  if (theme.audio) {
     siteConfig.audio = theme.audio
   }
 
   var text = '';
+  text += fs.readFileSync('themes/shoka/source/js/_app/vendor.js');
 
-  ['utils', 'dom', 'player', 'global', 'sidebar', 'page', 'pjax'].forEach(function(item) {
-    text += fs.readFileSync('themes/shoka/source/js/_app/'+item+'.js').toString();
+
+  ['utils', 'dom', 'player', 'global', 'sidebar', 'page', 'pjax'].forEach(function (item) {
+    text += fs.readFileSync('themes/shoka/source/js/_app/' + item + '.js').toString();
   });
 
-  if(theme.fireworks && theme.fireworks.enable) {
+  if (theme.fireworks && theme.fireworks.enable) {
     text += fs.readFileSync('themes/shoka/source/js/_app/fireworks.js').toString();
     siteConfig.fireworks = theme.fireworks.color || ["rgba(255,182,185,.9)", "rgba(250,227,217,.9)", "rgba(187,222,214,.9)", "rgba(138,198,209,.9)"]
   }
@@ -68,9 +70,9 @@ hexo.extend.generator.register('script', function(locals){
   text = 'var CONFIG = ' + JSON.stringify(siteConfig) + ';' + text;
 
   return {
-      path: theme.js + '/app.js',
-      data: function(){
-        return hexo.render.renderSync({text:  text, engine: 'js'});
-      }
-    };
+    path: theme.js + '/app.js',
+    data: function () {
+      return hexo.render.renderSync({ text: text, engine: 'js' });
+    }
+  };
 });

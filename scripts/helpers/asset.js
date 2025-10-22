@@ -56,19 +56,22 @@ hexo.extend.helper.register('_vendor_js', () => {
   vendorJs = [...new Set(vendorJs)];
   vendorJs = vendorJs.join(',');
 
-  let result = vendorJs ? `<script src="//cdn.jsdelivr.net/combine/${vendorJs}"></script>` : '';
-
-  return vendorJs ? htmlTag('script', { src: `//cdn.jsdelivr.net/combine/${vendorJs}` }, '') : '';
+  // let result = vendorJs ? `<script src="//cdn.jsdelivr.net/combine/${vendorJs}"></script>` : '';
+  // return vendorJs ? htmlTag('script', { attr: '???', src: `../../source/js/_app/vendor.min.js` }, '') : '';
+  if (vendorJs) {
+    return htmlTag('script', { src: '' }, '');
+  }
+  return '';
 });
 
-hexo.extend.helper.register('_css', function(...urls) {
+hexo.extend.helper.register('_css', function (...urls) {
   const { statics, css } = hexo.theme.config;
 
   return urls.map(url => htmlTag('link', { rel: 'stylesheet', href: url_for.call(this, `${statics}${css}/${url}?v=${theme_env['version']}`) })).join('');
 });
 
 
-hexo.extend.helper.register('_js', function(...urls) {
+hexo.extend.helper.register('_js', function (...urls) {
   const { statics, js } = hexo.theme.config;
 
   return urls.map(url => htmlTag('script', { src: url_for.call(this, `${statics}${js}/${url}?v=${theme_env['version']}`) }, '')).join('');
