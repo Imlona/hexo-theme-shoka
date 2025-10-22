@@ -60,7 +60,7 @@ Hexo的默认及常用渲染器均使用`highlight.js`进行代码高亮，而�
 
 ```bash
 # cd your-blog
-git clone https://github.com/amehime/hexo-theme-shoka.git ./themes/shoka
+git clone https://github.com/Imlona/hexo-theme-shoka.git ./themes/shoka
 ```
 
 打开主题目录，内有`example`文件夹，提供了配置文件的demo供参考。
