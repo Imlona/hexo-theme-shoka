@@ -1,5 +1,5 @@
 # Alternate site name
-alternate: Yume Shoka
+alternate: Shoka
 
 open_graph:
   #twitter_id:
@@ -20,9 +20,9 @@ favicon:
   #android_manifest: /manifest.json
   #ms_browserconfig: /browserconfig.xml
 
-# Dark Mode
-# By default, the page judges whether to turn on the dark mode according to the device settings or user selection
-# if `true`, the page will be displayed directly as Dark Mode, unless the user makes another choice
+  # Dark Mode
+  # By default, the page judges whether to turn on the dark mode according to the device settings or user selection
+  # if `true`, the page will be displayed directly as Dark Mode, unless the user makes another choice
 darkmode: false
 
 # By default the page will automatically scroll to the last viewed position
@@ -56,7 +56,7 @@ font:
     family: Mulish
     size:
 
-  # Font settings for alternate title.
+      # Font settings for alternate title.
   logo:
     external: true
     family: Fredericka the Great
@@ -74,12 +74,12 @@ font:
     family: Noto Serif SC
     size:
 
-  # Font settings for posts.
+      # Font settings for posts.
   posts:
     external: true
     family:
 
-  # Font settings for <code> and code blocks.
+      # Font settings for <code> and code blocks.
   codes:
     external: true
     family: Inconsolata
@@ -99,11 +99,11 @@ menu:
   # friends: /friends/ || heart
   # links: /links/ || magic
 
-# Social Links
-# Usage: `Key: permalink || icon || color`
-# Key is the link label showing to end users.
-# Value before `||` delimiter is the target permalink,
-# secend value is the name of Font icon.
+  # Social Links
+  # Usage: `Key: permalink || icon || color`
+  # Key is the link label showing to end users.
+  # Value before `||` delimiter is the target permalink,
+  # secend value is the name of Font icon.
 social:
   #github: https://github.com/yourname || github || "#191717"
   #google: https://plus.google.com/yourname || google
@@ -166,7 +166,6 @@ tagcloud:
   end: "#ffbac3" # End color (hex, rgba, hsla or color keywords)
   amount: 200 # Amount of tags, change it if you have more than 200 tags
 
-
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
 # ---------------------------------------------------------------
@@ -213,7 +212,7 @@ valine:
     investor:
       # - hash of investor1@email.com
 
-# bgm
+      # bgm
 audio:
   # - title: 列表1
   #   list:
@@ -247,9 +246,9 @@ quicklink:
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   ignores:
 
-# ---------------------------------------------------------------
-# analytics & SEO Settings
-# ---------------------------------------------------------------
+    # ---------------------------------------------------------------
+    # analytics & SEO Settings
+    # ---------------------------------------------------------------
 baidu_analytics: # <app_id>
 
 # Disable Baidu transformation on mobile devices.
@@ -276,7 +275,6 @@ baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: false
-
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING `vendors` SETTINGS
