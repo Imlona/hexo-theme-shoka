@@ -489,9 +489,11 @@ const algoliaSearch = function(pjax) {
     instantsearch.widgets.hits({
       container: '#search-hits',
       templates: {
-        item: function(data) {
+        item: function (data) {
+          var _host = location.origin;
+          var _url = _host.endsWith(':4000') ? _host + data.path : data.url;
           var cats = data.categories ? '<span>'+data.categories.join('<i class="ic i-angle-right"></i>')+'</span>' : '';
-          return '<a href="' + CONFIG.root + data.path +'">'+cats+data._highlightResult.title.value+'</a>';
+          return '<a href="' + _url +'">'+cats+data._highlightResult.title.value+'</a>';
         },
         empty: function(data) {
           return '<div id="hits-empty">'+
