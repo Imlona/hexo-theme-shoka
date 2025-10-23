@@ -154,8 +154,7 @@ reward:
   enable: true
   account:
     wechatpay: /wechatpay.png
-    alipay: /alipay.png
-    paypal: /paypal.png
+    alipay: /alipay.png # paypal: /paypal.png
 
 # TagCloud settings for tags page.
 tagcloud:
@@ -180,8 +179,6 @@ creative_commons:
   language: deed.zh
 
 # Comments
-# Valine
-# For more information: https://github.com/amehime/MiniValine
 valine:
   appId: #Your_appId
   appKey: #Your_appkey
