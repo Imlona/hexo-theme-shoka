@@ -59,6 +59,7 @@ hexo.extend.helper.register('_vendor_js', () => {
 
   let result = vendorJs ? `<script src="/${vendorJs}"></script>` : '';
   return vendorJs ? htmlTag('script', { attr: 'cus', src: `/${vendorJs}` }, '') : '';
+  // return vendorJs ? htmlTag('script', { attr: 'cus', src: `//s4.zstatic.net/${vendorJs}` }, '') : '';
   // return '';
 });
 
