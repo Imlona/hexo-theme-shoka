@@ -235,7 +235,7 @@ const mediaPlayer = function(t, config) {
 
       source.attr('src', item.url);
       source.attr('title', item.name + ' - ' + item.artist);
-      this.volume(store.get('_PlayerVolume') || '0.7')
+      this.volume(store.get('_PlayerVolume') || '0.6')
       this.muted(store.get('_PlayerMuted'))
 
       progress.create()
